@@ -301,4 +301,45 @@ Os resultados das duas consultas dependerão dos dados reais presentes na tabela
 
 ## Aula 09 - `MIN`, `MAX` e `AVG`
 
- 
+**Consulta 1:**
+
+```sql
+SELECT TOP 10 SUM(LineTotal) AS "Soma"
+FROM sales.SalesOrderDetail;
+```
+
+**Explicação:**
+
+- Esta consulta seleciona os 10 primeiros valores da soma da coluna LineTotal, agrupando-os por pedido.
+
+- Ela calcula a soma total de todos os valores da coluna LineTotal para cada pedido e retorna os 10 maiores valores.
+
+- O alias "Soma" é utilizado para renomear a coluna resultante da soma.
+
+- A consulta utiliza a tabela sales.SalesOrderDetail.
+
+**Consulta 2:**
+
+```sql
+SELECT TOP 10 *
+FROM Sales.SalesOrderDetail;
+```
+
+**Explicação:**
+
+- Esta consulta seleciona os 10 primeiros registros da tabela Sales.SalesOrderDetail.
+
+- Ela retorna todos os campos (*) de cada registro selecionado.
+
+- A consulta também utiliza a tabela Sales.SalesOrderDetail.
+
+**Diferenças:**
+
+- A primeira consulta utiliza a função SUM para somar os valores da coluna LineTotal para cada pedido, enquanto a segunda consulta seleciona todos os campos de cada registro.
+
+- A primeira consulta retorna apenas o resultado da soma, enquanto a segunda consulta retorna todos os detalhes de cada pedido, incluindo o ID do pedido, o ID do produto, a quantidade vendida, o preço unitário e o valor total do item.
+- A primeira consulta usa a cláusula TOP 10 para limitar o número de resultados retornados, enquanto a segunda consulta retorna todos os registros selecionados.
+
+**Resumo:**
+
+- A primeira consulta é útil para obter uma visão geral das vendas totais por pedido, enquanto a segunda consulta é útil para obter mais detalhes sobre os pedidos individuais.
